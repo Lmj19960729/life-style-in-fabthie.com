@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="UniTrade Global – International trade solutions, premium product showcase, company insights & trade blog.">
+  <title>UniTrade Global | Sourcing & Trade Excellence</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1E2A3E;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section, .page-section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3, .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0A2540;
+    }
+
+    .section-subhead {
+      font-size: 1.125rem;
+      color: #5A6874;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #0077B6;
+      color: white;
+      box-shadow: 0 4px 14px rgba(0,119,182,0.25);
+    }
+
+    .btn-primary:hover {
+      background: #023E8A;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid #0077B6;
+      color: #0077B6;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #0077B6;
+      color: white;
+    }
+
+    /* navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      z-index: 1000;
+      padding: 18px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #0077B6;
+    }
+
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0A2540;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1E2A3E;
+      transition: color 0.2s;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #0077B6;
+    }
+
+    /* pages container */
+    .page {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .page.active-page {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* product grid (enhanced) */
+    .products-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 40px 0;
+    }
+
+    .product-item {
+      background: white;
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transition: all 0.25s;
+      border: 1px solid #edf2f7;
+    }
+
+    .product-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,119,182,0.12);
+      border-color: #cbdff2;
+    }
+
+    .product-icon {
+      font-size: 2.8rem;
+      color: #0077B6;
+      margin-bottom: 20px;
+    }
+
+    .product-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: #EFF6FC;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0077B6;
+      margin: 12px 0;
+    }
+
+    /* company timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .timeline-year {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #0077B6;
+      min-width: 100px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin: 48px 0;
+    }
+
+    .team-card {
+      text-align: center;
+      background: #F9FCFE;
+      border-radius: 32px;
+      padding: 28px 16px;
+    }
+
+    .team-avatar {
+      background: #E2F0FF;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 3rem;
+      color: #0077B6;
+    }
+
+    /* blog cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+      transition: 0.25s;
+      border: 1px solid #eef3fc;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .blog-img {
+      background: #D9E9FA;
+      padding: 32px;
+      text-align: center;
+      font-size: 2.8rem;
+      color: #0A2540;
+    }
+
+    .blog-content {
+      padding: 24px;
+    }
+
+    .blog-date {
+      font-size: 0.8rem;
+      color: #0077B6;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: #0077B6;
+      font-weight: 600;
+      margin-top: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 32px;
+      padding: 32px;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* forms & contact */
+    .contact-cta {
+      background: #F0F7FF;
+      border-radius: 48px;
+      padding: 48px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    footer {
+      background: #0F1E2C;
+      color: #C9D9E8;
+      padding: 48px 0 28px;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2A3A4A;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 800px) {
+      .container { padding: 0 24px; }
+      .nav-container { flex-direction: column; gap: 16px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 24px; }
+      h2 { font-size: 2rem; }
+      .timeline-item { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <i class="fas fa-globe-americas logo-icon"></i>
+      <div class="logo-text">UniTrade<span style="color:#0077B6">Global</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a data-page="home" class="nav-link active">Home</a></li>
+      <li><a data-page="products" class="nav-link">Products</a></li>
+      <li><a data-page="company" class="nav-link">Company</a></li>
+      <li><a data-page="blog" class="nav-link">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active-page">
+    <!-- hero -->
+    <div style="background: linear-gradient(135deg, #F0F7FF 0%, #E9F1FA 100%); padding: 80px 0 90px;">
+      <div class="container">
+        <div class="hero-grid" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+          <div style="flex:1.2">
+            <div style="background: rgba(0,119,182,0.12); display: inline-block; padding: 6px 18px; border-radius: 40px; font-weight: 600; color:#0077B6; margin-bottom: 24px;"><i class="fas fa-rocket"></i> Global trade simplified</div>
+            <h1 style="font-size: 3.6rem; line-height: 1.2;">Bridging Markets, <span style="color:#0077B6">Driving Growth</span></h1>
+            <p style="font-size:1.2rem; margin: 24px 0; color:#33475b;">Connecting manufacturers & buyers worldwide — delivering industrial, electronic, textile solutions with seamless logistics.</p>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+              <a href="#" data-page="products" class="btn btn-primary nav-link">Explore products →</a>
+              <a href="#" data-page="company" class="btn btn-outline nav-link">Learn about us</a>
+            </div>
+          </div>
+          <div style="flex:0.9; background: rgba(255,255,255,0.5); border-radius: 48px; padding: 32px; display: flex; gap: 28px; flex-wrap: wrap;">
+            <div style="text-align:center; flex:1"><div style="font-size:2.5rem; font-weight:800; color:#0077B6">45+</div><div>Export Countries</div></div>
+            <div style="text-align:center; flex:1"><div style="font-size:2.5rem; font-weight:800; color:#0077B6">1.2k</div><div>Projects delivered</div></div>
+            <div style="text-align:center; flex:1"><div style="font-size:2.5rem; font-weight:800; color:#0077B6">24/7</div><div>Global support</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- featured products preview -->
+    <div class="container" style="padding: 80px 0;">
+      <h2 style="text-align:center">Featured solutions</h2>
+      <div class="section-subhead">Trusted by partners across industries</div>
+      <div class="products-showcase">
+        <div class="product-item"><i class="fas fa-microchip product-icon"></i><h3>Industrial CNC</h3><div class="product-tag">Heavy machinery</div><p>Precision equipment for automotive & aerospace.</p></div>
+        <div class="product-item"><i class="fas fa-mobile-alt product-icon"></i><h3>Smart electronics</h3><div class="product-tag">Consumer tech</div><p>High-performance devices with global certifications.</p></div>
+        <div class="product-item"><i class="fas fa-tshirt product-icon"></i><h3>Eco Textiles</h3><div class="product-tag">Sustainable</div><p>Organic cotton, recycled polyester, OEKO-TEX®.</p></div>
+      </div>
+    </div>
+
+    <!-- quick contact form (original) -->
+    <div class="container" id="home-contact" style="padding-bottom: 80px;">
+      <div style="background:#F9FCFE; border-radius: 48px; padding: 48px;">
+        <h2 style="text-align:center">Get a free quote</h2>
+        <p style="text-align:center; margin-bottom: 32px;">Submit your sourcing request, we reply within 24h.</p>
+        <form id="quickContact" style="max-width:600px; margin:0 auto;">
+          <div style="margin-bottom:16px"><input type="text" id="qname" placeholder="Full name *" style="width:100%; padding:14px 20px; border-radius: 60px; border:1px solid #DBE5ED;"></div>
+          <div style="margin-bottom:16px"><input type="email" id="qemail" placeholder="Business email *" style="width:100%; padding:14px 20px; border-radius: 60px; border:1px solid #DBE5ED;"></div>
+          <div style="margin-bottom:24px"><textarea rows="3" id="qmsg" placeholder="Inquiry details" style="width:100%; padding:14px 20px; border-radius: 32px; border:1px solid #DBE5ED;"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Send request →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS page (extended catalog) -->
+  <div id="page-products" class="page">
+    <div class="container" style="padding-top: 60px;">
+      <h2 style="text-align: center;">Complete product catalog</h2>
+      <div class="section-subhead">Premium sourcing across industrial, electronic & lifestyle categories</div>
+      <div class="products-showcase">
+        <div class="product-item"><i class="fas fa-cogs product-icon"></i><h3>Hydraulic Presses</h3><div class="product-tag">Industrial</div><p>Up to 500 tons, CE certified. Ideal for metal forming.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+        <div class="product-item"><i class="fas fa-robot product-icon"></i><h3>Automation Arms</h3><div class="product-tag">Robotics</div><p>6-axis collaborative robots for assembly lines.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+        <div class="product-item"><i class="fas fa-laptop-code product-icon"></i><h3>Industrial PCs</h3><div class="product-tag">Electronics</div><p>Fanless, IP65 rated for harsh environments.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+        <div class="product-item"><i class="fas fa-headphones product-icon"></i><h3>Wireless Audio</h3><div class="product-tag">Consumer</div><p>TWS earbuds, soundbars with global warranty.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+        <div class="product-item"><i class="fas fa-tshirt product-icon"></i><h3>Performance Wear</h3><div class="product-tag">Textile</div><p>Moisture-wicking fabrics, custom branding.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+        <div class="product-item"><i class="fas fa-tools product-icon"></i><h3>Hand Tools Set</h3><div class="product-tag">Hardware</div><p>CR-V steel, drop-forged, export packages.</p><a href="#" class="read-more-btn" style="margin-top:12px;">Request price <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="contact-cta">
+        <h3>Looking for a specific item?</h3>
+        <p style="margin-bottom: 20px;">Our sourcing experts will find the best supplier within 72 hours.</p>
+        <a href="#" data-page="home" class="btn btn-primary nav-link">Contact trade desk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPANY page (about us extension) -->
+  <div id="page-company" class="page">
+    <div class="container" style="padding-top: 60px;">
+      <h2 style="text-align: center;">Who we are</h2>
+      <div class="section-subhead">Building bridges since 2012 – global reach, local expertise</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center; margin-bottom: 60px;">
+        <div style="flex: 1;"><p style="margin-bottom: 16px;">UniTrade Global was founded with a mission to simplify cross-border trade. Today we operate in 45+ countries, providing sourcing, quality control, logistics, and after-sales support.</p><p>We partner with audited manufacturers across Asia, Europe, and America to deliver consistent quality, on-time delivery, and full supply chain visibility.</p></div>
+        <div style="flex: 1; background: #EFF6FC; border-radius: 48px; padding: 40px; text-align: center;"><i class="fas fa-chart-line" style="font-size: 4rem; color:#0077B6;"></i><h3 style="margin-top: 16px;">+178% growth</h3><p>Year over year export volume increase since 2020</p></div>
+      </div>
+      
+      <h3 style="font-size: 1.8rem; margin: 40px 0 20px;">Our journey</h3>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">2012</div><div><strong>Foundation</strong> – Started as a textile trading desk in Shanghai.</div></div>
+        <div class="timeline-item"><div class="timeline-year">2015</div><div><strong>Global expansion</strong> – Opened offices in Hamburg and New York.</div></div>
+        <div class="timeline-item"><div class="timeline-year">2019</div><div><strong>Industrial & electronics division</strong> – Added heavy machinery sourcing.</div></div>
+        <div class="timeline-item"><div class="timeline-year">2024</div><div><strong>Green trade Initiative</strong> – Carbon-neutral logistics options.</div></div>
+      </div>
+
+      <h3 style="margin: 40px 0 20px;">Leadership</h3>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-user-tie"></i></div><h4>Elena Voss</h4><p>CEO, 20 years global trade</p></div>
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-chart-pie"></i></div><h4>Michael Chen</h4><p>Chief Supply Chain Officer</p></div>
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-globe"></i></div><h4>Sarah K. Omondi</h4><p>Director of African Markets</p></div>
+      </div>
+
+      <div class="contact-cta" style="background: #0A2540; color:white;">
+        <h3 style="color:white;">Partner with us</h3>
+        <p style="margin-bottom: 20px;">Join our network of 500+ active B2B partners worldwide.</p>
+        <a href="#" data-page="home" class="btn btn-primary nav-link" style="background:#FFB74D; color:#0A2540;">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG page -->
+  <div id="page-blog" class="page">
+    <div class="container" style="padding-top: 60px;">
+      <h2 style="text-align: center;">Trade insights & news</h2>
+      <div class="section-subhead">Expert advice, market trends and success stories from our global team</div>
+      <div class="blog-grid" id="blogGrid">
+        <!-- blog cards dynamically but static content -->
+        <div class="blog-card" data-blog-id="1">
+          <div class="blog-img"><i class="fas fa-ship"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">April 15, 2025</div>
+            <h3>New Incoterms 2025: What exporters must know</h3>
+            <p>Major updates to delivery terms affect risk and cost allocation. Our logistics experts break down the changes.</p>
+            <button class="read-more-btn" onclick="openBlogModal(1)">Read more →</button>
+          </div>
+        </div>
+        <div class="blog-card" data-blog-id="2">
+          <div class="blog-img"><i class="fas fa-chart-line"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">March 28, 2025</div>
+            <h3>Sourcing sustainable textiles in Southeast Asia</h3>
+            <p>How eco-friendly materials and ethical factories are reshaping the fashion supply chain.</p>
+            <button class="read-more-btn" onclick="openBlogModal(2)">Read more →</button>
+          </div>
+        </div>
+        <div class="blog-card" data-blog-id="3">
+          <div class="blog-img"><i class="fas fa-microchip"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">March 10, 2025</div>
+            <h3>Electronics demand 2025: Top categories to import</h3>
+            <p>Smart home devices, wearables and components with high ROI for distributors.</p>
+            <button class="read-more-btn" onclick="openBlogModal(3)">Read more →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta" style="margin-top: 60px;">
+        <h3>Subscribe to our monthly trade newsletter</h3>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+          <input type="email" id="newsEmail" placeholder="Your email address" style="padding: 12px 24px; border-radius: 60px; border:1px solid #ccc; width: 280px;">
+          <button class="btn btn-primary" onclick="alert('📬 Thanks for subscribing! You’ll receive the next trade digest.')">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Blog Modal -->
+<div id="blogModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeBlogModal()">&times;</span>
+    <div id="modalBody"><h3>Full article</h3><p>Content loading...</p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-flex">
+      <div><div class="logo-text" style="color:white;"><i class="fas fa-globe-americas"></i> UniTradeGlobal</div><p style="margin-top:12px;">Your trusted partner in international trade.</p></div>
+      <div style="display: flex; gap: 48px;"><a href="#" style="color:#CADAE9; text-decoration:none;" data-page="home" class="nav-link">Home</a><a href="#" style="color:#CADAE9; text-decoration:none;" data-page="products" class="nav-link">Products</a><a href="#" style="color:#CADAE9; text-decoration:none;" data-page="company" class="nav-link">Company</a><a href="#" style="color:#CADAE9; text-decoration:none;" data-page="blog" class="nav-link">Blog</a></div>
+    </div>
+    <div class="copyright"><p>&copy; 2025 UniTrade Global Inc. | Trade with confidence</p></div>
+  </div>
+</footer>
+
+<script>
+  // page routing
+  const pages = {
+    home: document.getElementById('page-home'),
+    products: document.getElementById('page-products'),
+    company: document.getElementById('page-company'),
+    blog: document.getElementById('page-blog')
+  };
+  const navLinks = document.querySelectorAll('.nav-link');
+  let currentPage = 'home';
+
+  function showPage(pageId) {
+    if (!pages[pageId]) return;
+    Object.values(pages).forEach(page => page.classList.remove('active-page'));
+    pages[pageId].classList.add('active-page');
+    currentPage = pageId;
+    // update active class in navigation
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('data-page');
+      if (linkPage === pageId) link.classList.add('active');
+      else link.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      if (page) showPage(page);
+    });
+  });
+
+  // initial from hash or default home
+  function handleHash() {
+    let hash = window.location.hash.substring(1);
+    if (hash && pages[hash]) showPage(hash);
+    else showPage('home');
+  }
+  window.addEventListener('hashchange', handleHash);
+  if(window.location.hash) handleHash(); else showPage('home');
+
+  // blog modal content
+  const blogData = {
+    1: { title: "New Incoterms 2025: Key updates", full: "The International Chamber of Commerce released Incoterms 2025 with revised emphasis on digital proof of delivery. Exporters must adapt contracts accordingly. UniTrade can help navigate the transition with legal and logistics support." },
+    2: { title: "Sustainable textiles in Southeast Asia", full: "Vietnam and Indonesia are emerging as hubs for recycled polyester and organic cotton. Our recent factory audits showcase cutting-edge waterless dyeing technologies, improving compliance with EU regulations." },
+    3: { title: "Electronics demand 2025: Top categories", full: "Consumer electronics imports grew 24% in Q1. Smart wearables, AI-powered home appliances, and industrial sensors lead the demand. UniTrade provides verified suppliers with competitive lead times." }
+  };
+
+  window.openBlogModal = function(id) {
+    const modal = document.getElementById('blogModal');
+    const modalBodyDiv = document.getElementById('modalBody');
+    const post = blogData[id];
+    if(post) {
+      modalBodyDiv.innerHTML = `<h3>${post.title}</h3><p style="margin:16px 0">${post.full}</p><p style="margin-top:20px">For detailed sourcing solutions, contact us directly via the contact form.</p>`;
+    } else {
+      modalBodyDiv.innerHTML = `<p>Content unavailable.</p>`;
+    }
+    modal.style.display = 'flex';
+  };
+  window.closeBlogModal = function() {
+    document.getElementById('blogModal').style.display = 'none';
+  };
+  window.onclick = function(e) {
+    const modal = document.getElementById('blogModal');
+    if (e.target === modal) modal.style.display = 'none';
+  };
+
+  // quick contact form (homepage)
+  const quickForm = document.getElementById('quickContact');
+  if(quickForm) {
+    quickForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('qname')?.value.trim();
+      const email = document.getElementById('qemail')?.value.trim();
+      const msg = document.getElementById('qmsg')?.value.trim();
+      if(!name || !email || !msg) { alert('Please fill required fields'); return; }
+      if(!email.includes('@')) { alert('Valid email required'); return; }
+      alert(`Thank you ${name}! Our trade team will contact you soon.`);
+      quickForm.reset();
+    });
+  }
+
+  // product request buttons behavior (demo)
+  document.querySelectorAll('.product-item .read-more-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Our sales team will send a quote within 12 hours. Please provide your contact via the contact form.');
+    });
+  });
+</script>
+</body>
+</html>
