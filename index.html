@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="UniTrade Global – Your trusted partner in international trade, import & export solutions for industrial, electronic, and textile products worldwide.">
+  <title>UniTrade Global | Premier International Trade Partner</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Poppins + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1E2A3E;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* custom container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* section spacing */
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 85px;
+    }
+
+    /* headings */
+    h1, h2, h3, .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0A2540;
+    }
+
+    .section-subhead {
+      font-size: 1.125rem;
+      color: #5A6874;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .btn-primary {
+      background: #0077B6;
+      color: white;
+      box-shadow: 0 4px 14px rgba(0,119,182,0.25);
+    }
+
+    .btn-primary:hover {
+      background: #023E8A;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,119,182,0.3);
+    }
+
+    .btn-outline {
+      border: 2px solid #0077B6;
+      color: #0077B6;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #0077B6;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.02);
+      z-index: 1000;
+      padding: 18px 0;
+      transition: all 0.2s;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-icon {
+      font-size: 2rem;
+      color: #0077B6;
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0A2540;
+    }
+    .logo span {
+      font-weight: 400;
+      color: #0077B6;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1E2A3E;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #0077B6;
+    }
+    .nav-contact {
+      background: #0077B6;
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 40px;
+      transition: all 0.2s;
+    }
+    .nav-contact:hover {
+      background: #023E8A;
+      transform: scale(0.98);
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, #F0F7FF 0%, #E9F1FA 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 110px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: rgba(0,119,182,0.12);
+      color: #0077B6;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+    .hero-content h1 {
+      font-size: 3.8rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: #0A2540;
+    }
+    .hero-highlight {
+      color: #0077B6;
+      border-bottom: 3px solid #FFB74D;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #33475b;
+      margin-bottom: 36px;
+      max-width: 550px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      flex: 0.9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 48px;
+      padding: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+    }
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0077B6;
+      font-family: 'Poppins', sans-serif;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #3a546d;
+    }
+
+    /* products / services */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 32px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
+      border: 1px solid #edf2f7;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px -12px rgba(0,119,182,0.15);
+      border-color: #cbdff2;
+    }
+    .product-icon {
+      font-size: 3.5rem;
+      color: #0077B6;
+      margin-bottom: 24px;
+    }
+    .product-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .product-card p {
+      color: #5A6874;
+      margin-bottom: 24px;
+    }
+    .product-link {
+      color: #0077B6;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .product-link i {
+      transition: transform 0.2s;
+    }
+    .product-link:hover i {
+      transform: translateX(4px);
+    }
+
+    /* about & company values */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text h2 {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+    .about-feature {
+      display: flex;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .feature-icon {
+      background: #EFF6FC;
+      width: 48px;
+      height: 48px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #0077B6;
+    }
+    .about-image {
+      flex: 0.9;
+      background: linear-gradient(145deg, #cbe4fe, #e2f0ff);
+      border-radius: 48px;
+      padding: 32px;
+      text-align: center;
+    }
+    .about-image i {
+      font-size: 9rem;
+      color: #023E8A;
+      opacity: 0.7;
+    }
+
+    /* advantages grid */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .advantage-card {
+      background: #F9FCFE;
+      border-radius: 28px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: 0.25s;
+      border: 1px solid #eef3fc;
+    }
+    .advantage-card i {
+      font-size: 2.8rem;
+      color: #0077B6;
+      margin-bottom: 20px;
+    }
+    .advantage-card h4 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* contact section */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+    .contact-form {
+      flex: 1.2;
+      background: #F9FCFE;
+      border-radius: 40px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid #DBE5ED;
+      border-radius: 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background: white;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #0077B6;
+      box-shadow: 0 0 0 3px rgba(0,119,182,0.1);
+    }
+    .contact-info {
+      flex: 0.9;
+      background: #0A2540;
+      border-radius: 40px;
+      padding: 40px;
+      color: white;
+    }
+    .contact-info h3 {
+      color: white;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+    }
+    .info-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+      align-items: center;
+    }
+    .info-item i {
+      font-size: 1.5rem;
+      color: #FFB74D;
+    }
+    .social-icons {
+      margin-top: 36px;
+      display: flex;
+      gap: 20px;
+    }
+    .social-icons a {
+      color: white;
+      background: rgba(255,255,255,0.12);
+      width: 42px;
+      height: 42px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background: #0077B6;
+      transform: translateY(-3px);
+    }
+
+    /* footer */
+    footer {
+      background: #0F1E2C;
+      color: #C9D9E8;
+      padding: 48px 0 28px;
+    }
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+    }
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #CADAE9;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #FFB74D;
+    }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2A3A4A;
+      padding-top: 28px;
+      font-size: 0.85rem;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .container {
+        padding: 0 24px;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .hero-stats {
+        width: 100%;
+        justify-content: center;
+      }
+      .contact-form, .contact-info {
+        flex: 100%;
+      }
+      .about-wrap {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+    /* animations */
+    .fade-up {
+      animation: fadeUp 0.6s ease-out;
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <i class="fas fa-globe-americas logo-icon"></i>
+        <div class="logo-text">UniTrade<span>Global</span></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-contact">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-rocket"></i> Global trade simplified</div>
+        <h1>Bridging Markets, <span class="hero-highlight">Driving Growth</span></h1>
+        <p class="hero-desc">We connect manufacturers & buyers worldwide — delivering quality industrial, electronic, and textile solutions with seamless logistics.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Start sourcing →</a>
+          <a href="#products" class="btn btn-outline">Explore solutions</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">Export Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1.2k</div>
+          <div class="stat-label">Successful projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Global support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products / core offerings -->
+  <section id="products">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2>Our core supply categories</h2>
+        <div class="section-subhead">Premium products backed by rigorous quality control and global compliance standards.</div>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Industrial Machinery</h3>
+          <p>Heavy-duty equipment, automation parts, and manufacturing tools trusted by factories worldwide.</p>
+          <a href="#" class="product-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card">
+          <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Consumer Electronics</h3>
+          <p>High-performance gadgets, smart devices, and components tailored for international retail markets.</p>
+          <a href="#" class="product-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card">
+          <div class="product-icon"><i class="fas fa-tshirt"></i></div>
+          <h3>Textile & Apparel</h3>
+          <p>Sustainable fabrics, ready-made garments, and home textiles with ethical supply chain.</p>
+          <a href="#" class="product-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About + values -->
+  <section id="about">
+    <div class="container about-wrap">
+      <div class="about-text">
+        <h2>More than a trading company</h2>
+        <p>Founded in 2012, UniTrade Global has grown into a dynamic import-export partner for businesses across 4 continents. We blend local market insights with international logistics to solve cross-border challenges.</p>
+        <p>Our team works closely with vetted manufacturers and provides end-to-end support: quality inspection, shipping, customs clearance, and after-sales service.</p>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+          <div><strong>100% Trusted network</strong><br>Long-term partnerships with audited factories.</div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <div><strong>Data-driven sourcing</strong><br>We use market intelligence for competitive pricing.</div>
+        </div>
+      </div>
+      <div class="about-image">
+        <i class="fas fa-globe-asia"></i>
+        <p style="margin-top: 20px; font-weight: 500;">🌎 45+ countries served</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us (Advantages) -->
+  <section style="background: #F8FBFE;">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2>Why global partners choose us</h2>
+        <div class="section-subhead">Reliability, transparency, and a commitment to your supply chain efficiency.</div>
+      </div>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <i class="fas fa-shipping-fast"></i>
+          <h4>Global Logistics</h4>
+          <p>Air, sea, and rail freight with real-time tracking and warehousing in key hubs.</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-clipboard-list"></i>
+          <h4>Quality Assurance</h4>
+          <p>Pre-shipment inspections & compliance with ISO, CE, RoHS standards.</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-headset"></i>
+          <h4>24/7 Multilingual Team</h4>
+          <p>English, Spanish, Mandarin — dedicated account managers across time zones.</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h4>Flexible Payment</h4>
+          <p>Letter of credit, T/T, and trade assurance for secure transactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-form">
+        <h2>Ready to expand globally?</h2>
+        <p style="margin-bottom: 28px; color: #4b5b6c;">Request a quote or ask about product sourcing — we reply within 24h.</p>
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Full name *" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Business email *" required>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" id="message" name="message" placeholder="Tell us about your inquiry or target products..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send message →</button>
+          <p style="font-size: 0.8rem; margin-top: 16px; text-align: center; color: #7c8b9c;">*We'll never share your information</p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h3><i class="fas fa-map-pin"></i> Connect directly</h3>
+        <div class="info-item">
+          <i class="fas fa-building"></i>
+          <div>30 Wall Street, 8th Floor<br>New York, NY 10005, USA</div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>trade@unitradeglobal.com</div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>+1 (212) 555 7890</div>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div style="margin-top: 40px;">
+          <i class="fas fa-clock"></i> Mon-Fri: 9:00 AM – 6:00 PM (EST)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-flex">
+        <div>
+          <div class="footer-logo"><i class="fas fa-globe-americas"></i> UniTradeGlobal</div>
+          <p style="margin-top: 12px; max-width: 260px;">Your gateway to international trade excellence.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 UniTrade Global Inc. | All rights reserved | Trade with confidence</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple form handler (demo) -->
+  <script>
+    (function() {
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name')?.value.trim();
+          const email = document.getElementById('email')?.value.trim();
+          const msg = document.getElementById('message')?.value.trim();
+          if (!name || !email || !msg) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+          if (!email.includes('@') || !email.includes('.')) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          alert(`Thank you ${name}! Your message has been sent. Our trade team will get back to you within 24 hours.`);
+          form.reset();
+        });
+      }
+
+      // Add smooth fade class on scroll reveal? small extra: simply add class to sections when visible.
+      // subtle animation already via CSS - can add entrance effect on load for hero.
+      const hero = document.querySelector('.hero');
+      if(hero) hero.classList.add('fade-up');
+      // add fade-up effect to sections on appear? simple optional, but for extra polish we can.
+      const fadeElements = document.querySelectorAll('.products-grid, .about-wrap, .advantages-grid, .contact-grid');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+      fadeElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
