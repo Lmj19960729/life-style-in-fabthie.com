@@ -1,3 +1,3 @@
 # https://shanghaifabthieecommerce.com
-A landing page of Shanghai Fabthie E-commerce Co., Ltd.
+Shanghai Fabthie E-commerce Co., Ltd.
 
